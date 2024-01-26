@@ -18,7 +18,7 @@ const App = () => {
   const navigate = useNavigate();
   const {cartItemCount} = useCart()
   const onSearch = (searchQuery) => {
-    navigate(`/?${createSearchParams({ q: searchQuery })}`)
+    navigate(`/dashboard?${createSearchParams({ q: searchQuery })}`)
   }
 
   return (
@@ -30,7 +30,7 @@ const App = () => {
       </Routes>
 
       <NavBar onSearch={onSearch} cartItemCount={cartItemCount()} />
-      {/* <Banner /> */}
+
       <Routes>
         <Route path="/dashboard" element={<Products />} />
         <Route path="/product/:productId" element={<Product />} />
